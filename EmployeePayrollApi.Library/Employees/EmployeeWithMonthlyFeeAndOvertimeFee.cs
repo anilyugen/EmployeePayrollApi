@@ -1,11 +1,14 @@
 ﻿using EmployeePayrollApi.Library.FeeCalculations;
+using Newtonsoft.Json;
 
 namespace EmployeePayrollApi.Library.Employees
 {
 	public class EmployeeWithMonthlyFeeAndOvertimeFee : EmployeeWithMonthlyFee
 	{
+		[JsonIgnore]
 		public decimal OvertimeHour { get; set; }
 
+		[JsonIgnore]
 		public decimal OvertimeFee { get; set; }
 
 		public EmployeeWithMonthlyFeeAndOvertimeFee()

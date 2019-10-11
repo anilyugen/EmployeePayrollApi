@@ -1,9 +1,11 @@
 ﻿using EmployeePayrollApi.Library.FeeCalculations;
+using Newtonsoft.Json;
 
 namespace EmployeePayrollApi.Library.Employees
 {
 	public class EmployeeWithMonthlyFee : Employee
 	{
+		[JsonIgnore]
 		public decimal MonthlyFee { get; set; }
 
 		public EmployeeWithMonthlyFee() { }
