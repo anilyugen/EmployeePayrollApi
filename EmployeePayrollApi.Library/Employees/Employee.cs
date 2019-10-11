@@ -26,9 +26,7 @@ namespace EmployeePayrollApi.Library.Employees
 		{
 			get
 			{
-				this.feeCalculationInvoker.Reset();
-				AddCalculators();
-				return this.feeCalculationInvoker.Calculate();
+				return GetSalary();
 			}
 		}
 
@@ -36,9 +34,11 @@ namespace EmployeePayrollApi.Library.Employees
 
 		protected abstract void AddCalculators();
 
-		public void Print()
+		private decimal GetSalary()
 		{
-			Console.WriteLine("Ad: {0} / Maaş: {1}", this.Name, this.Salary);
+			this.feeCalculationInvoker.Reset();
+			AddCalculators();
+			return this.feeCalculationInvoker.Calculate();
 		}
 	}
 }
